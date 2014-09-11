@@ -19,7 +19,7 @@
 				<div class="right"><input type="search" class="search-input" placeholder="検索" ng-model="query.name" name="name"></input></div>
 			</ons-toolbar>
 			<ons-list>
-				<ons-list-item ng-repeat="item in items|filter:query">
+				<ons-list-item ng-repeat="item in items|filter:{$:query.name}">
 					<div class="clearfix">
 						<div class="floatleft"><strong>{{item.name}}</strong></div>
 						<div class="floatright">{{item.company}}</div>
