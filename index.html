@@ -12,21 +12,35 @@
 	<script src="scripts/app.js"></script>
 </head>
 <body ng-controller="AppController">
-    <ons-navigator var="navigator">
+    <ons-navigator title="Navigator" var="myNavigator">
 		<ons-page ng-controller="PageController">
-			<ons-toolbar>
+			<ons-toolbar class="index-toolbar">
 				<div class="left">食べマルシェ2014</div>
 				<div class="right"><input type="search" class="search-input" placeholder="食べ物やお店の名前" ng-model="query.name" name="name"></input></div>
 			</ons-toolbar>
 			<ons-list>
-				<ons-list-item ng-repeat="item in items|filter:{$:query.name}">
-					<div class="clearfix">
-						<div class="floatleft"><strong>{{item.name}}</strong></div>
-						<div class="floatright">{{item.company}}</div>
-					</div>
+				<ons-list-item modifier="chevron" ng-repeat="item in items|filter:{$:query.name}" onclick="showShop()">
+					<div class="floatleft"><strong>{{item.name}}</strong></div>
+					<div class="floatright">{{item.company}}</div>
 				</ons-list-item>
 			</ons-list>
 		</ons-page>
     </ons-navigator>
+	<ons-template id="shop.html">
+		<ons-page>
+			<ons-toolbar>
+				<div class="left"><ons-back-button>戻る</ons-back-button></div>
+				<div class="center">店舗詳細</div>
+			</ons-toolbar>
+			<div class="shopdetail">
+				●●市場<br>
+				場所 : ○○ゾーン 99<br>
+				<p>品目1
+				品目2
+				</p>
+				自治体 : 旭川市
+			</div>
+		</ons-page>
+	</ons-template>
 </body>
 </html>

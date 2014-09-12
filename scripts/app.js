@@ -1463,3 +1463,8 @@ module.controller('PageController', function($scope) {
 	  // Init code here
 	});
 });
+
+function showShop(shopName) {
+	myNavigator.pushPage('shop.html', { animation : 'slide' } )
+	alert(shopName);
+}
