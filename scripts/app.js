@@ -1458,9 +1458,21 @@ module.controller('AppController', function($scope) {
 	];
 
 	$scope.showShop = function(shop) {
+        if(shop.products === undefined){
+            shop.products = $scope.searchProductsByCompany(shop);
+        }
 		$scope.shop = shop;
 		myNavigator.pushPage('shop.html', { animation : 'slide' } );
 	} 
+    $scope.searchProductsByCompany = function(shop) {
+        var products = [];
+        for(var i=0; i<$scope.items.length; i++){
+            if($scope.items[i].company == shop.company){
+                products.push($scope.items[i].name);
+            }
+        }
+        return products;
+    };
 });
 module.controller('PageController', function($scope) {
 	ons.ready(function() {

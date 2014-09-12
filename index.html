@@ -35,6 +35,9 @@
 			<div class="shopdetail">
 				<br>
 				<strong>{{shop.company}}</strong><br><br>
+				取扱商品 :
+				<p ng-repeat='product in shop.products'>{{ product }}</p>
+				<br>
 				場所 : {{shop.place}} {{shop.num}}番<br><br>
 				自治体 : {{shop.area}}
 			</div>
