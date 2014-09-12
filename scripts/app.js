@@ -1466,5 +1466,4 @@ module.controller('PageController', function($scope) {
 
 function showShop(shopName) {
 	myNavigator.pushPage('shop.html', { animation : 'slide' } )
-	alert(shopName);
 }
