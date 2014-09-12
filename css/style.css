@@ -16,6 +16,10 @@
     float: right;
 }
 
-.navigation-bar .center {
+.index-toolbar .center {
 	width: 0;
+}
+
+.list__item {
+	padding-right: 34px;
 }
