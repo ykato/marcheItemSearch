@@ -19,7 +19,7 @@
 				<div class="right"><input type="search" class="search-input" placeholder="食べ物やお店の名前" ng-model="query.name" name="name"></input></div>
 			</ons-toolbar>
 			<ons-list>
-				<ons-list-item modifier="chevron" ng-repeat="item in items|filter:{$:query.name}" onclick="showShop()">
+				<ons-list-item modifier="chevron" ng-repeat="item in items|filter:{$:query.name}" ng-click="showShop(item);">
 					<div class="floatleft"><strong>{{item.name}}</strong></div>
 					<div class="floatright">{{item.company}}</div>
 				</ons-list-item>
@@ -33,12 +33,10 @@
 				<div class="center">店舗詳細</div>
 			</ons-toolbar>
 			<div class="shopdetail">
-				●●市場<br>
-				場所 : ○○ゾーン 99<br>
-				<p>品目1
-				品目2
-				</p>
-				自治体 : 旭川市
+				<br>
+				<strong>{{shop.company}}</strong><br><br>
+				場所 : {{shop.place}} {{shop.num}}番<br><br>
+				自治体 : {{shop.area}}
 			</div>
 		</ons-page>
 	</ons-template>

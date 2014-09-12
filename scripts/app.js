@@ -1457,6 +1457,10 @@ module.controller('AppController', function($scope) {
 		{'place': '東北マルシェ＜西武A館＞', 'num': '', 'company': 'さいとう製菓', 'name': 'かもめの玉子', 'area': '岩手県'},
 	];
 
+	$scope.showShop = function(shop) {
+		$scope.shop = shop;
+		myNavigator.pushPage('shop.html', { animation : 'slide' } );
+	} 
 });
 module.controller('PageController', function($scope) {
 	ons.ready(function() {
@@ -1464,6 +1468,3 @@ module.controller('PageController', function($scope) {
 	});
 });
 
-function showShop(shopName) {
-	myNavigator.pushPage('shop.html', { animation : 'slide' } )
-}
