@@ -16,7 +16,7 @@
 		<ons-page ng-controller="PageController">
 			<ons-toolbar>
 				<div class="left">食べマルシェ2014</div>
-				<div class="right"><input type="search" class="search-input" placeholder="検索" ng-model="query.name" name="name"></input></div>
+				<div class="right"><input type="search" class="search-input" placeholder="食べ物やお店の名前" ng-model="query.name" name="name"></input></div>
 			</ons-toolbar>
 			<ons-list>
 				<ons-list-item ng-repeat="item in items|filter:{$:query.name}">
