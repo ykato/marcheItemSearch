@@ -26,7 +26,7 @@
 		<ons-page ng-controller="PageController">
 			<ons-toolbar class="index-toolbar">
 				<div class="left">食べマルシェ2014</div>
-				<div class="right"><input type="search" class="search-input" placeholder="食べ物やお店の名前" ng-model="query.name" name="name"></input></div>
+				<div class="right"><input type="search" id="search-box" class="search-input" placeholder="食べ物やお店の名前" ng-model="query.name" name="name" ng-keypress="catchEnter($event);"></input></div>
 			</ons-toolbar>
 			<ons-list>
 				<ons-list-item modifier="chevron" ng-repeat="item in items|filter:{$:query.name}" ng-click="showShop(item);">

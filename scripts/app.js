@@ -1473,6 +1473,11 @@ module.controller('AppController', function($scope) {
         }
         return products;
     };
+	$scope.catchEnter = function(keyEvent) {
+		if (keyEvent.which === 13) {
+			document.getElementById('search-box').blur();
+		}
+	}
 });
 module.controller('PageController', function($scope) {
 	ons.ready(function() {
